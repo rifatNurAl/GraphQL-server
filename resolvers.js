@@ -59,14 +59,14 @@ export const resolvers = {
 
       if (user && user.password === password) {
         const token = jwt.sign({ username }, "my_secret_key", {
-          expiresIn: "1h",
+          expiresIn: "3d",
         });
 
         return {
           username,
           access_token: token,
           token_type: "Bearer",
-          expires_in: "1h",
+          expires_in: "3d",
         };
       }
 
